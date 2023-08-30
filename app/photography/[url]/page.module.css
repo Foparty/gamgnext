@@ -1,0 +1,21 @@
+.backbtn,
+.nextbtn {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	top: 0;
+}
+
+.backbtn {
+	left: 0;
+}
+
+.nextbtn {
+	left: 50%;
+}
+
+@media (width < 80rem) {
+	.titlexl {
+		display: none;
+	}
+}

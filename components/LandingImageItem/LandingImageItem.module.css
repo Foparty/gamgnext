@@ -1,0 +1,41 @@
+.title {
+	display: block;
+	line-height: 1;
+	font-size: 1.4rem;
+	font-weight: 700;
+	letter-spacing: 3px;
+	margin-bottom: 0.5rem;
+}
+
+.location {
+	font-size: 1.1rem;
+	letter-spacing: 3px;
+	font-weight: 300;
+}
+
+@media (width > 48rem) {
+	.textcontainer {
+		display: none;
+	}
+
+	.imgcontainer {
+		margin: 0;
+		overflow: hidden;
+		display: inline-flex;
+		transition: 0.2s ease-in;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	}
+
+	.imgcontainer:hover {
+		border-radius: 0.3rem;
+	}
+
+	.imgcontainer img {
+		transform: scale(1.03);
+		transition: transform 0.2s ease-in;
+	}
+
+	.imgcontainer:hover img {
+		transform: scale(1);
+	}
+}
