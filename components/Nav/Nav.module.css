@@ -11,7 +11,7 @@
 
 .menu {
 	width: 100%;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	gap: 0.2rem;
 	text-transform: capitalize;
@@ -48,6 +48,14 @@
 	flex-direction: column;
 	justify-content: space-between;
 	z-index: 99;
+}
+@media (width > 48rem) {
+	.hamburguer {
+		display: none;
+	}
+	.menu {
+		display: flex;
+	}
 }
 
 .hamburguer span {
