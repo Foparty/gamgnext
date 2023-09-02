@@ -37,7 +37,7 @@ const getData = () => {
 };
 
 const Nav = () => {
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const [windowWidth, setWindowWidth] = useState(null);
 	const [toggled, setToggled] = useState(false);
 	useEffect(() => {
 		// Function to update the windowWidth state
