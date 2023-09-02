@@ -1,0 +1,33 @@
+.container:has(.words) {
+	margin-top: 1rem;
+	letter-spacing: 5px;
+	gap: 0.4rem;
+}
+
+.imgcontainer {
+	/* border: 1px solid red; */
+	inset: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imgcontainer svg {
+	/* border: 1px solid green; */
+	width: calc(100% + 10vw);
+	fill: var(--fg, #f2f2f2);
+	margin-bottom: -6px;
+}
+@media (width > 48rem) {
+	.imgcontainer svg {
+		margin-bottom: 0px;
+	}
+}
+.dark svg {
+	fill: var(--bg);
+}
+.imgcontainer svg text {
+	/* font-weight: 900; */
+	color: var(--fg);
+}

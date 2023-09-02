@@ -13,7 +13,13 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 0.6rem;
+	gap: 0.2rem;
+	text-transform: capitalize;
+	letter-spacing: 2px;
+}
+
+.menu a:nth-child(2) {
+	margin-bottom: 1.5rem;
 }
 
 .mobilemenu {
@@ -74,7 +80,9 @@
 	}
 
 	.logo {
-		width: 100%;
+		max-width: 10ch;
 		text-align: right;
+		align-self: flex-end;
+		line-height: 1;
 	}
 }

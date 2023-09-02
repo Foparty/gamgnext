@@ -3,6 +3,7 @@ import styles from './Nav.module.css';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { links } from '@/data/menulinks';
 
 const navMotion = {
 	visible: {
@@ -26,6 +27,15 @@ const itemMotionDesktop = {
 	hidden: { opacity: 1, x: 0 },
 };
 
+const getData = () => {
+	const data = links;
+
+	if (data) {
+		return data;
+	}
+	return notFound();
+};
+
 const Nav = () => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 	const [toggled, setToggled] = useState(false);
@@ -43,7 +53,7 @@ const Nav = () => {
 			window.removeEventListener('resize', handleResize);
 		};
 	}, []); // Empty dependency array to run the effect only once
-
+	const data = getData();
 	return (
 		<nav className={`${styles.nav} nav`}>
 			<h1 className={styles.logo}>
@@ -51,10 +61,16 @@ const Nav = () => {
 			</h1>
 			{windowWidth > 768 && (
 				<div className={styles.menu}>
-					<a href='/'>Home</a>
-					<a href='/about'>about</a>
-					<a href='/services'>services</a>
-					<a href='/contact'>contact</a>
+					{data.slice(0, 2).map((item) => (
+						<Link style={{ fontWeight: '900' }} key={item.id} href={item.url}>
+							{item.title}
+						</Link>
+					))}
+					{data.slice(2, 5).map((item) => (
+						<Link style={{ fontWeight: '100' }} key={item.id} href={item.url}>
+							{item.title}
+						</Link>
+					))}
 				</div>
 			)}
 			{windowWidth < 768 && (
@@ -74,27 +90,13 @@ const Nav = () => {
 
 			{toggled && windowWidth < 1200 && (
 				<motion.div variants={navMotion} animate='visible' initial='hidden' className={styles.mobilemenu}>
-					<motion.div variants={itemMotion}>
-						<Link href={'/'}>Home</Link>
-					</motion.div>
-					<motion.div variants={itemMotion}>
-						<Link href={'/'}>Work</Link>
-					</motion.div>
-					<motion.div variants={itemMotion}>
-						<Link href={'/'}>Words</Link>
-					</motion.div>
-					<motion.div variants={itemMotion}>
-						<Link href={'/'}>About</Link>
-					</motion.div>
-					<motion.div variants={itemMotion}>
-						<Link href={'/'}>Info</Link>
-					</motion.div>
-					<motion.div variants={itemMotion}>
-						<Link href={'/'}>...</Link>
-					</motion.div>
-					<motion.div variants={itemMotion}>
-						<Link href={'/'}>Photography</Link>
-					</motion.div>
+					{data.map((item) => (
+						<motion.div variants={itemMotion} key={item.id}>
+							<Link style={{ fontWeight: '900', textTransform: 'capitalize' }} href={item.url}>
+								{item.title}
+							</Link>
+						</motion.div>
+					))}
 				</motion.div>
 			)}
 		</nav>
