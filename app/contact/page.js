@@ -6,9 +6,9 @@ import ContactGroup from '@/components/ContactGroup/ContactGroup';
 
 const Contact = () => {
 	return (
-		<div className='about-wrapper'>
+		<div className={styles.contactWrapper}>
 			<Nav />
-			<main className={'contact'}>
+			<main className={styles.contact}>
 				{contact.map((item) => (
 					<ContactGroup key={item.id} data={item} />
 				))}

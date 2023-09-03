@@ -1,0 +1,51 @@
+.aboutWrapper {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-areas:
+		'menu'
+		'about';
+	@media (width > 48rem) {
+		grid-template-columns: 14rem auto;
+		grid-template-areas: 'menu about';
+	}
+	@media (width > 64rem) {
+		grid-template-columns: 14rem auto 14rem;
+		grid-template-areas: 'menu about .';
+	}
+}
+
+.about {
+	grid-area: about;
+	display: grid;
+	gap: 1.5rem;
+}
+.about h2 {
+	font-size: 1.8rem;
+	margin-bottom: 0.5rem;
+}
+.about p {
+	font-size: 1.3rem;
+}
+
+.about p + p {
+	margin-bottom: 0.5rem;
+}
+
+.author {
+	justify-self: end;
+}
+
+.about img {
+	margin: 0 auto;
+	width: min(100%, 50rem);
+	height: auto;
+	object-fit: contain;
+}
+
+@media (width > 48rem) {
+	.about {
+		padding: 1rem;
+		line-height: 1.3;
+	}
+}

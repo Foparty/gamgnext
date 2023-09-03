@@ -1,3 +1,37 @@
+.moreWrapper {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-areas:
+		'menu'
+		'more';
+	@media (width > 48rem) {
+		grid-template-columns: 14rem auto;
+		grid-template-areas: 'menu more';
+	}
+	@media (width > 64rem) {
+		grid-template-columns: 14rem auto 14rem;
+		grid-template-areas: 'menu more .';
+	}
+}
+
+.more {
+	padding-top: 0.5rem;
+	font-size: 1.3rem;
+	grid-area: more;
+}
+
+.more p + p {
+	margin-bottom: 2rem;
+}
+.more span {
+	display: block;
+	padding: 1rem 0;
+}
+
+.nomargin {
+	margin: 0 !important;
+}
 .firstgroup,
 .secondgroup {
 	width: 100%;

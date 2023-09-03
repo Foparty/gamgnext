@@ -5,9 +5,9 @@ import { more1, more2, more3, more4, more5 } from '@/public/more';
 
 const More = () => {
 	return (
-		<div className='about-wrapper'>
+		<div className={styles.moreWrapper}>
 			<Nav />
-			<main className={'contact'}>
+			<main className={styles.more}>
 				<span>--</span>
 				<p>
 					Qué satisfacción es cruzarse con Entes Brillantes. Personas, edificios, objetos, sensaciones… La vida emite luz, simplemente hay que estar abierto a percibirla, por muy sombrío que pueda ser el entorno. Otras veces te puede cegar, al contrario, por muy lúgubre que sea la mirada de uno.
@@ -45,9 +45,10 @@ const More = () => {
 					Mirar / ver / observar / otear / contemplar / atisbar / examinar / curiosear / pensar / reflexionar / considerar / apuntar / dirigirse / El punto de vista central de cada vivencia, en el que dicha vivencia, veía directamente lo que había en mi interior, tras mi mirada. proteger / amparar /
 					atañer / concernir / tocar / pertenecer / lindar / dar
 				</p>
-				…<span>Como decía, en el frontalismo, las palabras podrían sobrar o ser redundantes.</span>
-				<span>La formalidad de estos 34 frontalimos, es eso mismo, todo lo anterior… discriminado en este caso, por una perspectiva de imagen frontal.</span>
-				<span>El punto de vista central de cada vivencia, en el que dicha vivencia, veía directamente lo que había en mi interior, tras mi mirada.</span>
+				<span>…</span>
+				<p className={styles.nomargin}>Como decía, en el frontalismo, las palabras podrían sobrar o ser redundantes.</p>
+				<p className={styles.nomargin}>La formalidad de estos 34 frontalimos, es eso mismo, todo lo anterior… discriminado en este caso, por una perspectiva de imagen frontal.</p>
+				<p className={styles.nomargin}>El punto de vista central de cada vivencia, en el que dicha vivencia, veía directamente lo que había en mi interior, tras mi mirada.</p>
 				<span>--</span>
 				<div className={styles.secondgroup}>
 					<Image src={more4} alt='Front of Entes Brillantes booklet' width={500} height={500} />

@@ -15,9 +15,9 @@ const getData = () => {
 export default function Home() {
 	const data = getData();
 	return (
-		<div className='wrapper'>
+		<div className={styles.wrapper}>
 			<Nav />
-			<main className={'landing-gallery'}>
+			<main className={styles.landingGallery}>
 				{data.map((item) => (
 					<LandingImageItem key={item.id} data={item} />
 				))}
