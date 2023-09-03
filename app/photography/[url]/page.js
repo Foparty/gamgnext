@@ -42,23 +42,23 @@ const Page = ({ params }) => {
 	const data = getData(params.url);
 
 	return (
-		<div className='wrapper-page'>
+		<div className={styles.page}>
 			<Nav />
-			<div className={'img-container'}>
+			<div className={styles.imgContainer}>
 				{data.id !== 1 && <Link className={styles.backbtn} href={getPreviousPage(data.id)}></Link>}
 				{data.id <= projects.length - 1 && <Link className={styles.nextbtn} href={getNextPage(data.id)}></Link>}
 				<MyImageContainer object={'contain'} img={data.hdimg} altText={data.title} />
 			</div>
-			<section className={'page-title'}>
+			<section className={styles.pageTitle}>
 				<h1 className={styles.title}>{data.title}</h1>
 			</section>
-			<section className={'page-data'}>
+			<section className={styles.pageData}>
 				<h1 className={styles.titlexl}>{data.title}</h1>
 				<p>{data.location}</p>
 				<p>{data.date}</p>
 				<p>{data.shot}</p>
 			</section>
-			<section className={'page-description'}>
+			<section className={styles.pageDescription}>
 				{data.text.map((paragraph, index) => (
 					<p key={index}>{paragraph}</p>
 				))}
