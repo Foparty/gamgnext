@@ -49,7 +49,7 @@ import {
 	smimg7,
 	smimg8,
 	smimg9,
-} from '@/public/600';
+} from '@/public/600avif';
 import {
 	lgimg1,
 	lgimg10,
@@ -101,7 +101,7 @@ import {
 	lgimg7,
 	lgimg8,
 	lgimg9,
-} from '@/public/h1080';
+} from '@/public/h1080avif';
 
 export const projects = [
 	{
